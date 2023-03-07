@@ -103,6 +103,22 @@ playPauseButton.addEventListener("click", event => {
     }
 });
 
+const stepButton = document.getElementById("step");
+stepButton.addEventListener("click", event => {
+    pause();
+    universe.tick();
+    drawGrid();
+    drawCells();
+})
+
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", event => {
+    pause();
+    universe.reset();
+    drawGrid();
+    drawCells();
+})
+
 const drawGrid = () => {
     ctx.beginPath();
     ctx.strokeStyle = GRID_COLOR;

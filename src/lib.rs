@@ -129,6 +129,10 @@ impl Universe {
         count
     }
 
+    pub fn reset(&mut self) {
+        self.cells = (0..self.width * self.height).map(|_i| Cell::Dead).collect();
+    }
+
     pub fn tick(&mut self) {
         let mut next = self.cells.clone();
         Timer::new("Universe::tick");
